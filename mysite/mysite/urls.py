@@ -20,9 +20,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('news/', include('news.urls')),
+    path('', include('news.urls')),
 ]
 
 # сформировали маршрут в отладочном режиме, контроллер будет отдавать необходимые файлы
-if settings.Debag:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA__ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
